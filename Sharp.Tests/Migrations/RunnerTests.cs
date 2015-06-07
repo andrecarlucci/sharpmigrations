@@ -201,7 +201,7 @@ namespace Sharp.Tests.Migrations {
         public void Should_run_old_migrations_going_down() {
             SetVersion(7);
             _versionsFromDatabase.RemoveAt(5);
-            _versionRepository.Setup(x => x.EnsureSchemaVersionTable(It.IsAny<List<MigrationInfo>>()))
+            _versionRepository.Setup(x => x.EnsureVersionTable(It.IsAny<List<MigrationInfo>>()))
                               .Callback<List<MigrationInfo>>(list => list.RemoveRange(5,1));
             _runner.Run(5);
             Assert.AreEqual(1, MigrationTestHelper.ExecutedMigrationsUp.Count);

@@ -56,7 +56,7 @@ namespace Sharp.Migrations {
 
 		public void Run(long targetVersion) {
 		    List<MigrationInfo> migrationsFromAssembly = MigrationFinder.FindMigrations(_targetAssembly);
-            VersionRepository.EnsureSchemaVersionTable(migrationsFromAssembly);
+            VersionRepository.EnsureVersionTable(migrationsFromAssembly);
 		    List<long> migrationsFromDatabase = VersionRepository.GetAppliedMigrations();
 		    var migrationPlan = new MigrationPlan(migrationsFromDatabase, migrationsFromAssembly, targetVersion);
             RunMigrations(migrationPlan);

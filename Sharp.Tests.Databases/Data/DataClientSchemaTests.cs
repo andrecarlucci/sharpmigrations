@@ -226,5 +226,10 @@ namespace Sharp.Tests.Databases.Data {
             }
             catch {}
 	    }
+
+	    [Test]
+	    public void Can_create_table_with_schema() {
+	        _dataClient.Schema = "sharp2";
+	    }
 	}
 }

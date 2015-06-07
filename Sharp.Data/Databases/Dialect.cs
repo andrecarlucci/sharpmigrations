@@ -38,7 +38,6 @@ namespace Sharp.Data {
         }
 
         public abstract DbType GetDbType(string sqlType, int dataPrecision);
-
         public abstract string[] GetCreateTableSqls(Table table);
         public abstract string[] GetDropTableSqls(string tableName);
 

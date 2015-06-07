@@ -7,6 +7,8 @@ namespace Sharp.Data {
     
     public interface IDataClient : IDisposable  {
 
+        string Schema { get; set;}
+
         IDatabase Database { get; }
         Dialect Dialect { get; }
 

@@ -22,6 +22,7 @@ namespace Sharp.Migrator {
 
             //args = @"-a|C:\dev\way2\pim\Way2Pim.Migrations\bin\Debug\Way2Pim.Migrations.exe|-n|Oracle|-g|Way2Pim.Server".Split('|');
             //args = @"-a|C:\dev\opensource\Hangfire\src\HangFire.Oracle\bin\Debug\Hangfire.Oracle.dll|-p|Oracle.ManagedDataAccess.Client|-c|Data Source=//localhost:1521/XE;User Id=hangfire;Password=hangfire".Split('|');
+            args = @"-a|Data Source=//localhost:1521/XE;User Id=ccee;Password=ccee;|-p|Oracle.ManagedDataAccess.Client|-m|script|-f|script.txt|-a|c:\dev\opensource\Hangfire\src\HangFire.Oracle\bin\Debug\Hangfire.Oracle.dll".Split('|');
 
             AppDomain.CurrentDomain.AssemblyResolve += ResolveNotFoundAssembly;
 

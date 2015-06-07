@@ -6,7 +6,7 @@ using Sharp.Data.Schema;
 namespace Sharp.Data {
     public class FakeDataClient : IDataClient {
         public void Dispose() {}
-
+        public string Schema { get; set; }
         public IDatabase Database { get; private set; }
         public Dialect Dialect { get; private set; }
         public bool ThrowException { get; set; }

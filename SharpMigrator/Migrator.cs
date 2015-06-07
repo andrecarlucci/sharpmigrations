@@ -141,7 +141,7 @@ namespace Sharp.Migrator {
                     return;
                 }
                 var seedRunner = new SeedRunner(SharpFactory.Default.CreateDataClient(), GetAssemblyWithMigrations());
-                seedRunner.Run(Options.SeedName, Options.SeedArgs, Options.MigrationGroup);
+                seedRunner.Run(Options.SeedName, Options.SeedArgs);
                 return;
             }
             var crunner = new ConsoleRunner(SharpFactory.Default.ConnectionString, SharpFactory.Default.DataProviderName);

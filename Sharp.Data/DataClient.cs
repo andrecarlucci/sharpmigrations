@@ -9,14 +9,20 @@ using Sharp.Data.Schema;
 namespace Sharp.Data {
 
     public class DataClient : IDataClient {
+        public static string DefaultSchema { get; set; }
+
     	public IDatabase Database { get; set; }
 		public Dialect Dialect { get; set; }
+        public string Schema { get; set; }
         public bool ThrowException { get; set; }
 
-    	public DataClient(IDatabase database, Dialect dialect) {
+    	public DataClient(IDatabase database, Dialect dialect, string schema = null) {
             Database = database;
 			Dialect = dialect;
             ThrowException = true;
+            if (schema == null) {
+                DefaultSchema = Schema;            
+            }
     	}
 
 		public FluentAdd Add {

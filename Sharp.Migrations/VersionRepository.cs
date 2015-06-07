@@ -17,6 +17,8 @@ namespace Sharp.Migrations {
         private Filter _migrationGroupFilter;
         private string _migrationGroup;
 
+        public string MigrationTableSchema { get; set; }
+        public string MigrationTableName { get; set; }
         public string MigrationGroup {
             get { return GetMigrationGroup(_migrationGroup); }
             set {
@@ -32,9 +34,10 @@ namespace Sharp.Migrations {
         public VersionRepository(IDataClient dataClient) {
             _dataClient = dataClient;
             MigrationGroup = DEFAULT_MIGRATION_GROUP;
+            MigrationTableName = VERSION_TABLE_NAME;
         }
 
-        public void EnsureSchemaVersionTable(List<MigrationInfo> allMigrationsFromAssembly) {
+        public void EnsureVersionTable(List<MigrationInfo> allMigrationsFromAssembly) {
             CreateVersionTable();
             MigrateOldSchema(allMigrationsFromAssembly);
         }

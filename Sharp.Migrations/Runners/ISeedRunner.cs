@@ -1,5 +1,5 @@
 namespace Sharp.Migrations {
     public interface ISeedRunner {
-        void Run(string seedName, string param = null, string migrationGroup = null);        
+        void Run(string seedName, string param = null);        
     }
 }
